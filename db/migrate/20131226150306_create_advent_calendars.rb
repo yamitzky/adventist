@@ -3,7 +3,7 @@ class CreateAdventCalendars < ActiveRecord::Migration
     create_table :advent_calendars do |t|
       t.string :name, null: false
       t.string :provider, null: false
-      t.string :rss_url, null: false
+      t.string :url, null: false
 
       t.timestamps
     end

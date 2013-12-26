@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131226161745) do
   create_table "advent_calendars", force: true do |t|
     t.string   "name",       null: false
     t.string   "provider",   null: false
-    t.string   "rss_url",    null: false
+    t.string   "url",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
