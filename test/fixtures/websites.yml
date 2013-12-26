@@ -3,7 +3,11 @@
 one:
   url: MyString
   user_id: 1
+  feed_url: MyString
+  title: MyString
 
 two:
   url: MyString
   user_id: 1
+  feed_url: MyString
+  title: MyString
