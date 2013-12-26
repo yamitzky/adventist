@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226150306) do
+ActiveRecord::Schema.define(version: 20131226160000) do
+
+  create_table "advent_calendar_users", force: true do |t|
+    t.integer  "advent_calendar_id", null: false
+    t.integer  "user_id",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "advent_calendar_users", ["advent_calendar_id", "user_id"], name: "index_advent_calendar_users_on_advent_calendar_id_and_user_id", unique: true
 
   create_table "advent_calendars", force: true do |t|
     t.string   "name",       null: false
@@ -22,5 +31,13 @@ ActiveRecord::Schema.define(version: 20131226150306) do
   end
 
   add_index "advent_calendars", ["provider"], name: "index_advent_calendars_on_provider"
+
+  create_table "users", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "image_url"
+    t.string   "provider",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
