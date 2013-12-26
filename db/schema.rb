@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226160000) do
+ActiveRecord::Schema.define(version: 20131226161745) do
 
   create_table "advent_calendar_users", force: true do |t|
     t.integer  "advent_calendar_id", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20131226160000) do
   end
 
   add_index "advent_calendars", ["provider"], name: "index_advent_calendars_on_provider"
+
+  create_table "rsses", force: true do |t|
+    t.string   "url",        null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rsses", ["user_id"], name: "index_rsses_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name",       null: false
