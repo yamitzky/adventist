@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "nokogiri"
+require "open-uri"
+require "uri"
+require "resque"
+load File.expand_path "../../app/jobs/dump_adventar.rb", __FILE__
+
+doc = Nokogiri::HTML open("http://www.adventar.org/calendars")
+links = doc.css(".mod-calendarList-title a")
+
+links.each do |el|
+  url = URI.join "http://www.adventar.org", el.attr("href")
+  Resque.enqueue DumpAdventar, url
+end
