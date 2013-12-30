@@ -28,6 +28,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'enumerize'
+gem 'nokogiri'
+gem 'resque', '~> 1.26.pre.0'
+gem 'feedbag', :github => "yamitzky/feedbag", :branch => "master"
+gem 'addressable'
+gem 'simple-rss'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

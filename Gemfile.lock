@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/yamitzky/feedbag.git
+  revision: bc84ef5351355941e03b8c6c5f18253799d5c862
+  branch: master
+  specs:
+    feedbag (0.9.2)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -25,6 +33,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.5)
     arel (4.0.1)
     atomic (1.1.14)
     builder (3.1.4)
@@ -61,8 +70,12 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
+    mono_logger (1.1.0)
     multi_json (1.8.2)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -71,6 +84,8 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
+    rack-protection (1.5.1)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.2)
@@ -89,6 +104,15 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.6)
+    redis-namespace (1.4.1)
+      redis (~> 3.0.4)
+    resque (1.26.pre.0)
+      mono_logger (~> 1.0)
+      multi_json (~> 1.0)
+      redis-namespace (~> 1.2)
+      sinatra (>= 0.9.2)
+      vegas (~> 0.1.2)
     sass (3.2.13)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -97,6 +121,11 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simple-rss (1.3.1)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slop (3.4.7)
     sprockets (2.10.1)
       hike (~> 1.2)
@@ -121,20 +150,27 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   coffee-rails (~> 4.0.0)
   debugger
   enumerize
+  feedbag!
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   pry-rails
   rails (= 4.0.2)
+  resque (~> 1.26.pre.0)
   sass-rails (~> 4.0.0)
   sdoc
+  simple-rss
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
