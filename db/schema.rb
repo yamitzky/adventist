@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226194001) do
+ActiveRecord::Schema.define(version: 20131230064304) do
 
   create_table "advent_calendar_users", force: true do |t|
     t.integer  "advent_calendar_id", null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131226194001) do
     t.datetime "updated_at"
   end
 
+  add_index "websites", ["user_id", "url"], name: "index_websites_on_user_id_and_url", unique: true
   add_index "websites", ["user_id"], name: "index_websites_on_user_id"
 
 end
